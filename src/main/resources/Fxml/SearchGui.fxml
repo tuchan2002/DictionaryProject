@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="978.0" styleClass="containerBackground" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SearchController">
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="12.0" prefHeight="362.0" prefWidth="329.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <ListView fx:id="listResult" layoutX="2.0" layoutY="216.0" onMouseClicked="#onMouseClickListView" prefHeight="431.0" prefWidth="328.0" stylesheets="@../GUI.css" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="170.0" />
+            <Pane layoutX="5.0" prefHeight="118.0" prefWidth="328.0" AnchorPane.bottomAnchor="470.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+               <children>
+                  <Label alignment="CENTER" layoutY="1.0" prefHeight="72.0" prefWidth="327.0" styleClass="Label" stylesheets="@../GUI.css" text="S e a r c h" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="30.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="searchField" layoutY="99.0" onKeyReleased="#onActionSearchBtn" prefHeight="50.0" prefWidth="260.0" promptText="Nhập từ cần tìm kiếm">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/searchBook.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="265.0" layoutY="99.0" mnemonicParsing="false" onAction="#onActionSearchBtn" prefHeight="50.0" prefWidth="63.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+                           <image>
+                              <Image url="@../icons/searchWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+      <AnchorPane layoutX="306.0" layoutY="17.0" prefHeight="549.0" prefWidth="589.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="347.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <TextArea id="SearchGuiTextArea" fx:id="definitionArea" editable="false" layoutX="5.0" layoutY="129.0" prefHeight="431.0" prefWidth="580.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
+            <Label alignment="CENTER" layoutX="4.0" layoutY="8.0" prefHeight="72.0" prefWidth="580.0" styleClass="Label" stylesheets="@../GUI.css" text="     D e f i n i t i o n" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Pane layoutX="2.0" layoutY="97.0" prefHeight="50.0" prefWidth="580.0" AnchorPane.bottomAnchor="470.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="99.6">
+               <children>
+                  <Button layoutX="352.0" mnemonicParsing="false" onAction="#onActionSpeakerBtn" prefHeight="50.0" prefWidth="64.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+                           <image>
+                              <Image url="@../icons/speakerWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="434.0" mnemonicParsing="false" onAction="#onActionEditWord" prefHeight="50.0" prefWidth="64.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+                           <image>
+                              <Image url="@../icons/editWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="516.0" mnemonicParsing="false" onAction="#onActionDeleteWord" prefHeight="50.0" prefWidth="64.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+                           <image>
+                              <Image url="@../icons/deleteWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/list.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pronounceWord" alignment="CENTER" layoutX="74.0" layoutY="150.0" styleClass="labelWhite" AnchorPane.bottomAnchor="451.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="247.0" AnchorPane.topAnchor="100.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane fx:id="editTab" layoutX="363.0" prefHeight="460.0" prefWidth="418.0" styleClass="Label" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="363.0">
+         <children>
+            <TextArea fx:id="editTabTextArea" layoutX="41.0" layoutY="55.0" prefHeight="332.0" prefWidth="327.0" promptText="Nhập giải thích Tiếng Việt mới" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="55.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextArea>
+            <Label fx:id="editTabLabel" alignment="CENTER" layoutX="45.0" layoutY="15.0" prefHeight="35.0" prefWidth="270.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" layoutX="284.0" layoutY="437.0" mnemonicParsing="false" onAction="#onActionConfirmBtn" prefHeight="30.0" prefWidth="80.0" styleClass="confirmBtn" text="Confirm" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="345.0" layoutY="9.0" onMouseClicked="#onMouseClickedXBtn" pickOnBounds="true" preserveRatio="true" styleClass="XBtn" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
+               <image>
+                  <Image url="@../icons/x.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
